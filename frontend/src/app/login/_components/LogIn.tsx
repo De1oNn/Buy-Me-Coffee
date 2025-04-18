@@ -18,7 +18,6 @@ function Login() {
   const [loginMessage, setLoginMessage] = useState<{ type: string; message: string } | null>(null);
 
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/;
 
   const router = useRouter();
 
@@ -42,9 +41,9 @@ function Login() {
     if (password.trim() === "") {
       setPasswordError("Нууц үгээ оруулна уу");
       hasError = true;
-    } else if (!passwordRegex.test(password)) {
+    } else if (password.length < 6) {
       setPasswordError(
-        "Нууц үг дор хаяж 8 тэмдэгттэй, том жижиг үсэг болон тоо агуулсан байх ёстой"
+        "Нууц үг дор хаяж 6 тэмдэгттэй, том жижиг үсэг болон тоо агуулсан байх ёстой"
       );
       hasError = true;
     } else {
