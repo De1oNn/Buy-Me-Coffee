@@ -3,3 +3,4 @@
 .vercel     
 
 prisma/generated/
+/src/generated/prisma
