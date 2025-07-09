@@ -22,7 +22,10 @@ export const createProfile = async (
         avatarImage,
         socialMediaURL,
         backgroundImage,
-        successMessage
+        successMessage,
+        user: {
+          connect: { id: id }
+        }
       },
     });
     
